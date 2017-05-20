@@ -6,9 +6,8 @@
 $("input[type='text']").on("keypress", function(event) {
 	if(event.which === 13) {
 		var task = $(this).val();
-		addTask(task);
 		$(this).val("");
-		console.log(task);
+		addTask(task);
 	}
 });
 
@@ -21,7 +20,7 @@ function addTask(task) {
   Mark task as completed
   ========================================
 */
-$("li").on("click", function() {
+$("ul").on("click", "li", function() {
 	$(this).toggleClass("completed");
 });
 
@@ -30,7 +29,7 @@ $("li").on("click", function() {
   Remove task from list
   ========================================
 */
-$("li span").on("click", function(event) {
+$("ul").on("click","li span", function(event) {
 	event.stopPropagation();
 	$(this).parent().fadeOut(500, function(){
 		$(this.remove());
