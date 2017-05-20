@@ -12,7 +12,7 @@ $("input[type='text']").on("keypress", function(event) {
 });
 
 function addTask(task) {
-	$("ul").append("<li><span>X</span> " + task + "</li>");
+	$("ul").append("<li><span><i class='fa fa-trash'></i></span> " + task + "</li>");
 }
 
 /*
